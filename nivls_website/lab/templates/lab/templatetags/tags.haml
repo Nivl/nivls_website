@@ -1,9 +1,0 @@
-- load staticfiles i18n
-
-- for tag in tags
-    %li
-        %a{'data-ajax'    : 'body-content-only',
-           'data-depth'   : '10,',
-           'title'        : '{{ tag.name }}',
-           'href'         : '{% url "lab-tag" tag.slug %}'}
-            {{ tag.name }}
