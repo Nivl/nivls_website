@@ -27,6 +27,8 @@ const conf = {
           presets: ['es2015']
         },
       },
+      { test: /\.jpg$/, loader: "url-loader?mimetype=image/jpg" },
+      { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
       {
         test  : /\.scss$/,
         loader: (PROD) ? (['style', 'css', 'sass']) : (ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'sass-loader')),
