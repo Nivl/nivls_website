@@ -1,14 +1,7 @@
-The beta version is accessible at [beta.melvin.re](http://beta.melvin.re).
+[![Build Status](https://travis-ci.org/Nivl/www.melvin.la.svg?branch=next)](https://travis-ci.org/Nivl/www.melvin.la) [![bitHound Overall Score](https://www.bithound.io/github/Nivl/www.melvin.la/badges/score.svg)](https://www.bithound.io/github/Nivl/www.melvin.la)
 
-Dependencies
+www.melvin.la
 ============
 
-You can install most of the dependencies using PIP:
-
-        pip install -r requirements.txt
-
-
-You'll also need the following apps:
-
- * [wkhtmltopdf](http://code.google.com/p/wkhtmltopdf/) (only tested with the 0.11.0 rc1 static version)
- * django-pipeline requires [lessc](https://github.com/cloudhead/less.js) and a js/css minifier ([cssmin](https://github.com/zacharyvoase/cssmin) and [UglifyJS](https://github.com/mishoo/UglifyJS) are recomended. [see list](http://django-pipeline.readthedocs.org/en/latest/compressors.html)).
+    npm install
+    npm serve
