@@ -19,20 +19,16 @@ const conf = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test  : /\.jsx?$/,
         loader: 'babel',
-        query: {
+        query : {
           cacheDirectory: true,
-          plugins: ['transform-decorators-legacy' ],
-          presets: ['es2015']
+          plugins       : ['transform-decorators-legacy'],
+          presets       : ['es2015'],
         },
       },
-      { test: /\.jpg$/, loader: "url-loader?mimetype=image/jpg" },
-      { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
-      {
-        test  : /\.scss$/,
-        loader: (PROD) ? (['style', 'css', 'sass']) : (ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'sass-loader')),
-      },
+      { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
+      { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
     ],
   },
   plugins: [
@@ -45,8 +41,17 @@ const conf = {
 };
 
 if (PROD) {
+  // loaders
+  conf.module.loaders.push({ test: /\.scss$/, loader: ['style', 'css', 'sass'] });
+  // plugins
   conf.plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
 } else {
+  // loaders
+  conf.module.loaders.push({
+    test  : /\.scss$/,
+    loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'sass-loader'),
+  });
+  // plugins
   conf.plugins.push(new ExtractTextPlugin('styles.css'));
 }
 
