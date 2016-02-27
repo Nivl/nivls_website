@@ -7,7 +7,7 @@ import './app.scss';
 import template from 'html!./app.html';
 
 @Component({
-  selector  : 'my-app',
+  selector  : 'ml-app',
   directives: [NavbarComponent],
   template,
 
