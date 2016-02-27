@@ -42,14 +42,19 @@ const conf = {
 
 if (PROD) {
   // loaders
-  conf.module.loaders.push({ test: /\.scss$/, loader: ['style', 'css', 'sass'] });
+  conf.module.loaders.push({ test: /\.scss$/, loaders: ['style?amp', 'css', 'sass'] });
+  conf.module.loaders.push({ test: /\.css$/, loaders: ['style?amp', 'css'] });
   // plugins
   conf.plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
 } else {
   // loaders
   conf.module.loaders.push({
     test  : /\.scss$/,
-    loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'sass-loader'),
+    loader: ExtractTextPlugin.extract('style-loader?amp', 'css-loader?sourceMap', 'sass-loader'),
+  });
+  conf.module.loaders.push({
+    test  : /\.css$/,
+    loader: ExtractTextPlugin.extract('style-loader?amp', 'css-loader?sourceMap'),
   });
   // plugins
   conf.plugins.push(new ExtractTextPlugin('styles.css'));
