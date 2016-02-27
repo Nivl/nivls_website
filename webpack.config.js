@@ -35,6 +35,7 @@ const conf = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: `${__dirname}/src/index.html`,
+      favicon : `${__dirname}/src/favicon.png`,
       minify  : (PROD) ? ({ removeComments: true, collapseWhitespace: true, minifyJS: true }) : (false),
     }),
   ],
