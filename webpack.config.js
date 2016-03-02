@@ -35,6 +35,7 @@ const conf = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: `${__dirname}/src/index.html`,
+      favicon : `${__dirname}/src/favicon.png`,
       minify  : (PROD) ? ({ removeComments: true, collapseWhitespace: true, minifyJS: true }) : (false),
     }),
   ],
@@ -50,7 +51,7 @@ if (PROD) {
   // loaders
   conf.module.loaders.push({
     test  : /\.scss$/,
-    loader: ExtractTextPlugin.extract('style-loader?amp', 'css-loader?sourceMap', 'sass-loader'),
+    loader: ExtractTextPlugin.extract('style?amp', 'css?sourceMap!sass'),
   });
   conf.module.loaders.push({
     test  : /\.css$/,
