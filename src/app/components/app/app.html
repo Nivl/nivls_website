@@ -1,21 +1,30 @@
-<div class="mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">Home</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="#">Home</a>
+				<a class="mdl-navigation__link" href="#">About</a>
+				<a class="mdl-navigation__link" href="#">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Melvin Laplanche</span>
+  <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+    <header class='drawer__header'>
+      <img class="mdl-layout-logo" src="./images/logo.png" width="32" height="32" alt="Site's logo" />
+      <div class="mdl-layout-title">Melvin Laplanche</div>
+    </header>
 
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Blog</a>
+      <a class="mdl-navigation__link" [routerLink]="['Blog']">Blog</a>
       <a class="mdl-navigation__link" href="">Projects</a>
     </nav>
   </div>
 
   <main class="mdl-layout__content">
-    <h1>My First Angular 2 App</h1>
+    <router-outlet></router-outlet>
   </main>
 </div>

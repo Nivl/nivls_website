@@ -51,7 +51,7 @@ if (PROD) {
   // loaders
   conf.module.loaders.push({
     test  : /\.scss$/,
-    loader: ExtractTextPlugin.extract('style-loader?amp', 'css-loader?sourceMap', 'sass-loader'),
+    loader: ExtractTextPlugin.extract('style?amp', 'css?sourceMap!sass'),
   });
   conf.module.loaders.push({
     test  : /\.css$/,
