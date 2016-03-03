@@ -1,0 +1,25 @@
+
+ml-blog-card {
+  .mdl-card {
+    width: 100%;
+    min-height: 250px;
+    background: url('images/background.png') center / cover;
+  }
+
+  .mdl-card__actions {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+
+  .mdl-card__title {
+    color: #fff;
+    font-size: 24px;
+    padding: 0px;
+  }
+
+  .mdl-card__subtitle {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}

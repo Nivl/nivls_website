@@ -1,11 +1,12 @@
 import { Component } from 'angular2/core';
-import { Router } from 'angular2/router';
+import BlogListingComponent from '../listing/listing';
 
 import './blog.scss';
 import template from 'html!./blog.html';
 
 @Component({
   selector  : 'ml-blog',
+  directives: [BlogListingComponent],
   template,
 })
 
