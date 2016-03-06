@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import BlogComponent from '../../../blog/components/blog/blog';
+import BlogListingComponent from '../../../blog/components/listing/listing';
 import AboutComponent from '../../../about/components/about/about';
 import ProjectsComponent from '../../../projects/components/projects/projects';
 
@@ -21,7 +21,7 @@ import template from 'html!./app.html';
 @RouteConfig([
   { path: '/about', name: 'About', component: AboutComponent },
   { path: '/projects', name: 'Projects', component: ProjectsComponent },
-  { path: '/', name: 'Blog', component: BlogComponent, useAsDefault: true },
+  { path: '/', name: 'Blog', component: BlogListingComponent, useAsDefault: true },
 ])
 
 export class AppComponent {
