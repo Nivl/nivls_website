@@ -1,6 +1,8 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
+import AppService from '../../services/app';
+
 import BlogListingComponent from '../../../blog/components/listing/listing';
 import AboutComponent from '../../../about/components/about/about';
 import ProjectsComponent from '../../../projects/components/projects/projects';
@@ -14,7 +16,7 @@ import template from 'html!./app.html';
 @Component({
   selector  : 'ml-app',
   directives: [ROUTER_DIRECTIVES],
-  providers : [ROUTER_PROVIDERS],
+  providers : [ROUTER_PROVIDERS, AppService],
   template,
 })
 
@@ -25,4 +27,15 @@ import template from 'html!./app.html';
 ])
 
 export class AppComponent {
- }
+  constructor(appService) {
+    appService.header.subscribe(type => this.onHeaderUpdated(type));
+  }
+
+  onHeaderUpdated(type) {
+    console.info('onHeaderUpdated has not been implemented yet');
+  }
+
+  static get parameters() {
+    return [[AppService]];
+  }
+}
