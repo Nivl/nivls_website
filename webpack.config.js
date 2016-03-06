@@ -23,7 +23,7 @@ const conf = {
         loader: 'babel',
         query : {
           cacheDirectory: true,
-          plugins       : ['transform-decorators-legacy'],
+          plugins       : ['transform-decorators-legacy', 'syntax-async-functions'],
           presets       : ['es2015'],
         },
       },
