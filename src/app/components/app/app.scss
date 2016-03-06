@@ -1,4 +1,8 @@
 
+html, body {
+  font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+}
+
 .mdl-layout__drawer {
   border-right: none;
 }
@@ -22,5 +26,41 @@
     left: 0;
     width: 100%;
     text-align: center;
+  }
+}
+
+.ml-subheader {
+  height: 400px;
+
+  .ml-subheader__content {
+    margin: auto;
+  }
+
+  .ml-subheader__title {
+    font-weight: 300;
+    font-size: 72px;
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    margin-left: 40px;
+  }
+
+  .ml-subheader__links {
+    list-style: none;
+    font-size: 27px;
+    text-align: center;
+
+    // we remove the margin
+    position: relative;
+    top: -30px;
+
+    li {
+      display: inline-block;
+      margin-left: 20px;
+
+      a {
+        color: white;
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">Home</span>
@@ -11,6 +11,20 @@
         <a class="mdl-navigation__link" [routerLink]="['About']">About</a>
       </nav>
     </div>
+    <div class="mdl-layout__header-row ml-subheader mdl-layout--large-screen-only">
+
+        <div class="ml-subheader__content">
+          <img class="ml-subheader__logo" src="./images/logo.png" alt="Site's logo" />
+          <span class="ml-subheader__title">Melvin Laplanche</span>
+
+          <ul class="ml-subheader__links">
+            <li><a href="https://github.com/Nivl"><i class="fa fa-github-alt"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/382879/melvin"><i class="fa fa-stack-overflow"></i></a></li>
+            <li><a href="https://angel.co/melvin-laplanche"><i class="fa fa-angellist"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/melvinlaplanche"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
   </header>
 
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
