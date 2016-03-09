@@ -4,6 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import AppService from '../../services/app';
 
 import BlogListingComponent from '../../../blog/components/listing/listing';
+import BlogCreateArticleComponent from '../../../blog/components/create-article/create-article';
 import AboutComponent from '../../../about/components/about/about';
 import ProjectsComponent from '../../../projects/components/projects/projects';
 
@@ -25,6 +26,7 @@ import template from 'html!./app.html';
   { path: '/projects', name: 'Projects', component: ProjectsComponent },
 
   // Blog
+  { path: '/blog/new', name: 'BlogCreateArticle', component: BlogCreateArticleComponent },
   // { path: '/:year/:month/:day/:slug', name: 'Article', component: BlogListingComponent },
   { path: '/blog/:year/:month/:day', name: 'BlogByDay', component: BlogListingComponent },
   { path: '/blog/:year/:month', name: 'BlogByMonth', component: BlogListingComponent },
