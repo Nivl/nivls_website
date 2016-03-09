@@ -1,5 +1,22 @@
 ml-blog-create-article {
+  .mdl-textfield {
+    width: 100%;
+    max-width: 500px;
 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ml-form--publish {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  .ml-form--actions {
+    text-align: center;
+  }
 }
 
 // Big screen
