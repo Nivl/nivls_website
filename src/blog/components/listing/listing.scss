@@ -1,3 +1,25 @@
 ml-blog-listing {
+  .ml-add-post {
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    z-index: 998;
+  }
+}
 
+@media (min-width: 600px) {
+  ml-blog-listing {
+    .ml-add-post {
+      right: calc(12.5% + 8px);
+    }
+  }
+}
+
+@media (min-width: 840px) {
+  ml-blog-listing {
+    .ml-add-post {
+      right: calc(16.6666666667% + 8px);
+      bottom: 23px;
+    }
+  }
 }
