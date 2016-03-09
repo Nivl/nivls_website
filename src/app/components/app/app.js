@@ -23,6 +23,12 @@ import template from 'html!./app.html';
 @RouteConfig([
   { path: '/about', name: 'About', component: AboutComponent },
   { path: '/projects', name: 'Projects', component: ProjectsComponent },
+
+  // Blog
+  // { path: '/:year/:month/:day/:slug', name: 'Article', component: BlogListingComponent },
+  { path: '/:year/:month/:day', name: 'BlogByDay', component: BlogListingComponent },
+  { path: '/:year/:month', name: 'BlogByMonth', component: BlogListingComponent },
+  { path: '/:year', name: 'BlogByYear', component: BlogListingComponent },
   { path: '/', name: 'Blog', component: BlogListingComponent, useAsDefault: true },
 ])
 
