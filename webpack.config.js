@@ -39,6 +39,10 @@ const conf = {
       minify  : (PROD) ? ({ removeComments: true, collapseWhitespace: true, minifyJS: true }) : (false),
     }),
   ],
+  devServer: {
+    port: 8080,
+    historyApiFallback: true,
+  },
 };
 
 if (PROD) {
