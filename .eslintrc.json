@@ -18,5 +18,8 @@
     "no-param-reassign": [2, {"props": false}],
     "arrow-body-style": 0,
     "strict": 0
+  },
+  "globals": {
+    "prettyPrint": true
   }
 }
