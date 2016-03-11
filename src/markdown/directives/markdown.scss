@@ -1,0 +1,30 @@
+pre.prettyprint {
+  display: block;
+  background-color: #f7f7f7;
+  border: none !important;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #f7f7f7 !important;
+}
+
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{ list-style-type: decimal !important }
+
+pre .nocode { background-color: none; color: #f7f7f7 }
+pre .str { color: #3A57AF } /* string */
+pre .kwd { color: #a71d5d; font-weight: normal }
+pre .com { color: #969896 } /* comment */
+pre .typ { color: #795da3 } /* type */
+pre .lit { color: #0086b3 } /* literal */
+pre .pun { color: #555 }    /* punctuation */
+pre .pln { color: #555 }    /* plaintext */
+pre .tag { color: #63a35c; font-weight: normal } /* html/xml tag */
+pre .atn { color: #795da3; font-weight: normal } /* attribute name */
+pre .atv { color: #3A57AF } /* attribute value */
+pre .dec { color: #795da3 } /* decimal  */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
