@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter } from 'angular2/core';
+import { Directive, ElementRef } from 'angular2/core';
 
 import Showdown from 'showdown';
 import 'showdown-prettify';
