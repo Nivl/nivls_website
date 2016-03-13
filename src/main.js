@@ -1,10 +1,12 @@
 import 'zone.js';
 import 'reflect-metadata';
 
+import { HTTP_PROVIDERS } from 'angular2/http';
 import { bootstrap }    from 'angular2/platform/browser';
 import { AppComponent } from './app/components/app/app';
+import APIService from './app/services/api';
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [HTTP_PROVIDERS, APIService]);
 
 // Reload MDL on dom changes
 const observer = new MutationObserver((mutations) => {
