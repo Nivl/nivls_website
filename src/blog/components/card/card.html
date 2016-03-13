@@ -4,15 +4,15 @@
   <div class="mdl-card--expand"></div>
 
   <div class="mdl-card__actions">
-    <span class="mdl-card__title">The Article Title</span>
-    <div class="mdl-card__subtitle">This is the subtitle of the article</div>
+    <span class="mdl-card__title">{{ article.title }}</span>
+    <div class="mdl-card__subtitle">{{ article.subtitle }}</div>
   </div>
 </div>
 
 <!-- Desktop version -->
 <article class="ml-short-post mdl-cell--hide-phone mdl-cell--hide-tablet ml-900px-content">
-  <h2>The Article Title</h2>
+  <h2>{{ article.title }}</h2>
   <div class="ml-short-post__description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum magna tellus, at bibendum felis dictum id. Nullam mattis ligula quis risus condimentum, id congue massa faucibus. Sed placerat lorem id erat maximus pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus
+    {{ article.description }}
   </div>
 </article>
