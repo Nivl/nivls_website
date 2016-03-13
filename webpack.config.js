@@ -1,3 +1,5 @@
+/* eslint max-len: 0 */
+
 'use strict';
 
 const webpack           = require('webpack');
@@ -9,10 +11,8 @@ const PROD = (process.env.NODE_ENV && process.env.NODE_ENV === 'production');
 
 const conf = {
   devtool: 'source-map',
-  entry  : {
-    main: `${__dirname}/src/main.js`,
-  },
-  output: {
+  entry  : ['babel-polyfill', `${__dirname}/src/main.js`],
+  output : {
     path    : `${__dirname}/dist`,
     filename: '[name].bundle.[hash].js',
   },
@@ -23,8 +23,8 @@ const conf = {
         loader: 'babel',
         query : {
           cacheDirectory: true,
-          plugins       : ['transform-decorators-legacy', 'syntax-async-functions'],
-          presets       : ['es2015'],
+          plugins       : ['transform-decorators-legacy', 'syntax-async-functions', 'transform-regenerator', 'transform-class-properties'],
+          presets       : ['es2015', 'stage-0'],
         },
       },
       { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
@@ -40,7 +40,7 @@ const conf = {
     }),
   ],
   devServer: {
-    port: 8080,
+    port              : 8080,
     historyApiFallback: true,
   },
 };
