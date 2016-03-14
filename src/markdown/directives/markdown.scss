@@ -1,30 +1,128 @@
-pre.prettyprint {
-  display: block;
-  background-color: #f7f7f7;
-  border: none !important;
+code {
+  font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 }
 
-li.L1, li.L3, li.L5, li.L7, li.L9 {
-    background: #f7f7f7 !important;
+pre {
+  background-color: #373d43;
+  color: white;
+  border-radius: 4px;
+  padding: 20px;
 }
 
-li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8
-{ list-style-type: decimal !important }
+// Based on oauth.io colors
 
-pre .nocode { background-color: none; color: #f7f7f7 }
-pre .str { color: #3A57AF } /* string */
-pre .kwd { color: #a71d5d; font-weight: normal }
-pre .com { color: #969896 } /* comment */
-pre .typ { color: #795da3 } /* type */
-pre .lit { color: #0086b3 } /* literal */
-pre .pun { color: #555 }    /* punctuation */
-pre .pln { color: #555 }    /* plaintext */
-pre .tag { color: #63a35c; font-weight: normal } /* html/xml tag */
-pre .atn { color: #795da3; font-weight: normal } /* attribute name */
-pre .atv { color: #3A57AF } /* attribute value */
-pre .dec { color: #795da3 } /* decimal  */
+.hljs-date,
+.hljs-go-constant,
+.hljs-markdown-bullet,
+.hljs-markdown-link_url,
+.hljs-number,
+.hljs-smalltalk-char,
+.hljs-smalltalk-symbol,
+.hljs-title,
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link,
+.hljs-params,
+.hljs-class
+.hljs-title {
+  color: #42c7f4;
+}
 
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+.hljs-annotation,
+.hljs-chunk,
+.hljs-diff-header,
+.hljs-markdown-blockquote,
+.hljs-template_comment,
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #899fab;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-built_in,
+.hljs-aggregate,
+.hljs-apache-tag,
+.hljs-bash-variable,
+.hljs-go-typename,
+.hljs-id,
+.hljs-javadoctag,
+.hljs-markdown-strong,
+.hljs-phpdoc,
+.hljs-request,
+.hljs-smalltalk-class,
+.hljs-status,
+.hljs-tag-title,
+.hljs-tex-command,
+.hljs-winutils,
+.hljs-yardocta {
+    color: #ff9a56;
+}
+
+.hljs-addition,
+.hljs-aggregate,
+.hljs-apache-cbracket,
+.hljs-apache-tag,
+.hljs-bash-variable,
+.hljs-constant,
+.hljs-django-variable,
+.hljs-erlang_repl-function_or_atom,
+.hljs-flow,
+.hljs-markdown-header,
+.hljs-parent,
+.hljs-preprocessor,
+.hljs-ruby-symbol,
+.hljs-ruby-symbol-string,
+.hljs-rules-value,
+.hljs-rules-value-number,
+.hljs-smalltalk-class,
+.hljs-stream,
+.hljs-string,
+.hljs-tag-value,
+.hljs-template_tag,
+.hljs-tex-command,
+.hljs-tex-special,
+.hljs-title
+.hljs-type,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-variable,
+.hljs-template-variable {
+    color: #00fbca;
+}
+
+.hljs-apache-sqbracket,
+.hljs-array,
+.hljs-attr,
+.hljs-attr_selector,
+.hljs-clojure-attribute,
+.hljs-coffeescript-property,
+.hljs-decorator,
+.hljs-deletion,
+.hljs-doctype,
+.hljs-envvar,
+.hljs-erlang_repl-reserved,
+.hljs-filter-argument,
+.hljs-important,
+.hljs-javadoc,
+.hljs-label,
+.hljs-localvars,
+.hljs-markdown-link_label,
+.hljs-nginx-built_in,
+.hljs-pi,
+.hljs-prompt,
+.hljs-pseudo,
+.hljs-ruby-string,
+.hljs-shebang,
+.hljs-tag,
+.hljs-tex-formula,
+.hljs-vhdl-attribute {
+    color: #ffa0e7;
+}

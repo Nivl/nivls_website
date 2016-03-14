@@ -1,16 +1,20 @@
 import { Directive, ElementRef } from 'angular2/core';
 
-import Showdown from 'showdown';
-import 'showdown-prettify';
+import MarkdownIt from 'markdown-it';
+import hljs from 'highlight.js';
 
+import 'highlight.js/styles/monokai-sublime.css';
 import './markdown.scss';
 
 @Directive({
   selector: 'ml-markdown',
-  inputs  : ['data'],
+  inputs  : ['data', 'protect'],
 })
 
 export default class MardownDirective {
+  data; // @Input - Optional - Makdown to parse
+  protect = false; // @Input - Optional - Set to true to block html
+
   constructor(elementRef) {
     this.element = elementRef.nativeElement;
   }
@@ -35,9 +39,27 @@ export default class MardownDirective {
   }
 
   parse(raw) {
-    const html = new Showdown.Converter({ extensions: ['prettify'] }).makeHtml(raw);
-    this.element.innerHTML = html;
-    prettyPrint();
+    if (this.protect !== false) {
+      this.protect = true;
+    }
+
+    const md = new MarkdownIt({
+      html       : this.protect,
+      typographer: true,
+      highlight  : (str, lang) => {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value;
+          } catch (err) {
+            // do nothing
+          }
+        }
+
+        return '';
+      },
+    });
+
+    this.element.innerHTML = md.render(raw);
   }
 
   static get parameters() {

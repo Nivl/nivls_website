@@ -27,6 +27,7 @@ const conf = {
           presets       : ['es2015', 'stage-0'],
         },
       },
+      { test: /\.json$/, loader: 'json-loader' },
       { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
       { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
     ],
