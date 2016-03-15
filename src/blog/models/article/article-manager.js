@@ -1,17 +1,20 @@
 import { Injectable } from 'angular2/core';
 import APIService from '../../../app/services/api';
 import Article from './article';
+import { Router } from 'angular2/router';
 
 @Injectable()
 export default class ArticleManager {
-  api;
+  _api; // @input
+  _router; // @input
 
-  constructor(api) {
-    this.api = api;
+  constructor(api, router) {
+    this._api = api;
+    this._router = router;
   }
 
   static get parameters() {
-    return [[APIService]];
+    return [[APIService], [Router]];
   }
 
   /**
@@ -24,12 +27,12 @@ export default class ArticleManager {
    */
   async getListing(year, month, day) {
     return new Promise((resolve, reject) => {
-      this.api.get('Articles')
+      this._api.get('Articles')
       .subscribe((results) => {
         const articles = [];
 
         for (const res of results) {
-          articles.push(new Article(res));
+          articles.push(new Article(res, this._router));
         }
 
         resolve(articles);

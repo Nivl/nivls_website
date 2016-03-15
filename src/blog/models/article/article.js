@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export default class Article {
   id;
   title;
@@ -6,15 +8,26 @@ export default class Article {
   createdAt;
   content;
   isPublic;
+  slug;
+  // Extra
+  url = '/';
 
-  constructor(data) {
+  constructor(data, router) {
     this.id = data.id;
     this.title = data.title;
     this.subtitle = data.subtitle;
     this.description = data.description;
-    this.createdAt = data.createdAt;
+    this.createdAt = moment(data.createdAt);
     this.content = data.content;
     this.isPublic = data.isPublic;
+    this.slug = data.slug;
+
+    this.url = router.generate(['BlogReadArticle', {
+      day  : this.createdAt.day(),
+      month: this.createdAt.month(),
+      year : this.createdAt.year(),
+      slug : this.slug,
+    }]).toUrlPath();
   }
 
   /**
