@@ -27,7 +27,7 @@ import template from 'html!./app.html';
 
   // Blog
   { path: '/blog/new', name: 'BlogCreateArticle', component: BlogCreateArticleComponent },
-  // { path: '/:year/:month/:day/:slug', name: 'Article', component: BlogListingComponent },
+  { path: '/blog/:year/:month/:day/:slug', name: 'BlogReadArticle', component: BlogListingComponent },
   { path: '/blog/:year/:month/:day', name: 'BlogByDay', component: BlogListingComponent },
   { path: '/blog/:year/:month', name: 'BlogByMonth', component: BlogListingComponent },
   { path: '/blog/:year', name: 'BlogByYear', component: BlogListingComponent },
