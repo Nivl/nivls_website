@@ -22,9 +22,9 @@ export default class Article {
     this.isPublic = data.isPublic;
     this.slug = data.slug;
 
-    this.url = router.generate(['BlogReadArticle', {
-      day  : this.createdAt.day(),
-      month: this.createdAt.month(),
+    this.url = router.generate(['BlogArticle', {
+      day  : this.createdAt.date() + 1,
+      month: this.createdAt.month() + 1,
       year : this.createdAt.year(),
       slug : this.slug,
     }]).toUrlPath();
