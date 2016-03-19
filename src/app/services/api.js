@@ -14,17 +14,17 @@ export default class APIService {
     this.domain = 'http://127.0.0.1:3000/';
   }
 
-  _getUrl(endpoint) {
+  getUrl(endpoint) {
     return this.domain + endpoint;
   }
 
   get(endpoint) {
-    return this.http.get(this._getUrl(endpoint))
+    return this.http.get(this.getUrl(endpoint))
                     .map(res => res.json());
   }
 
   post(endpoint, data) {
-    return this.http.post(this._getUrl(endpoint), data)
+    return this.http.post(this.getUrl(endpoint), data)
                     .map(res => res.json());
   }
 
