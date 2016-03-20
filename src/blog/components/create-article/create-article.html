@@ -17,22 +17,22 @@
           </div>
 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="title">
+            <input class="mdl-textfield__input" [(ngModel)]="article.title" type="text" id="title">
             <label class="mdl-textfield__label" for="title">Title</label>
           </div>
 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="subtitle">
+            <input class="mdl-textfield__input" [(ngModel)]="article.subtitle" type="text" id="subtitle">
             <label class="mdl-textfield__label" for="subtitle">Subtitle</label>
           </div>
 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" type="text" rows="4" id="description"></textarea>
+            <textarea class="mdl-textfield__input" [(ngModel)]="article.description" rows="4" id="description"></textarea>
             <label class="mdl-textfield__label" for="description">Description</label>
           </div>
 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" [(ngModel)]="model.content" type="text" rows="20" id="content"></textarea>
+            <textarea class="mdl-textfield__input" [(ngModel)]="article.content" type="text" rows="20" id="content"></textarea>
             <label class="mdl-textfield__label" for="content">Content</label>
           </div>
 
@@ -45,8 +45,9 @@
               Save
             </button>
           </div>
-
         </form>
+
+        <ml-dropzone endpoint="http://localhost:3000/upload"></ml-dropzone>
       </div>
     </div>
   </div>
@@ -58,7 +59,7 @@
       </div>
 
       <div class="mdl-card__supporting-text">
-        <ml-markdown [data]="model.content"></ml-markdown>
+        <ml-markdown [data]="article.content"></ml-markdown>
       </div>
     </div>
   </div>

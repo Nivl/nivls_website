@@ -74,4 +74,14 @@ export default class ArticleManager {
       });
     });
   }
+
+  getUploadUrl(article) {
+    let url = '';
+
+    if (article.id) {
+      url = this._api.getUrl(`Articles/${article.id}/pictures`);
+    }
+
+    return url;
+  }
 }
