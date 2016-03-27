@@ -2,16 +2,39 @@
 html, body {
   color: #555;
   font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+  background-color: #FAFAFA;
 }
 
 .mdl-layout__drawer {
   border-right: none;
 }
 
+.mdl-layout__header,
+.mdl-button--raised.mdl-button--colored,
+.mdl-textfield__label:after,
+.mdl-switch.is-checked .mdl-switch__thumb {
+  background-color: #0187F0;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+  color: #0187F0;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised,
+.mdl-button--accent.mdl-button--accent.mdl-button--fab {
+  background-color: #8BC34A;
+}
+
+.mdl-switch.is-checked .mdl-switch__track {
+      background: rgba(1,135,240,.5);
+}
+
 .drawer__header {
   height: 145px;
   position: relative;
-  background-color: #009688;
+  background-color: #0187F0;
   color: #FFF;
 
   .mdl-layout-logo {

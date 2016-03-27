@@ -10,7 +10,7 @@ import AboutComponent from '../../../about/components/about/about';
 import ProjectsComponent from '../../../projects/components/projects/projects';
 
 import 'material-design-lite';
-import './material.min.css';
+import 'material-design-lite/dist/material.teal-amber.min.css';
 import './app.scss';
 
 import template from 'html!./app.html';
