@@ -24,13 +24,25 @@ export default class APIService {
   }
 
   post(endpoint, data) {
-    return this.http.post(this.getUrl(endpoint), data)
+    const body = JSON.stringify(data);
+
+    return this.http.post(this.getUrl(endpoint), body, this._getOptions())
                     .map(res => res.json());
   }
 
   put(endpoint, data) {
-    return this.http.put(this.getUrl(endpoint), data)
+    const body = JSON.stringify(data);
+
+    return this.http.put(this.getUrl(endpoint), body, this._getOptions())
                     .map(res => res.json());
+  }
+
+  _getOptions() {
+    return {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
   }
 
   static get parameters() {
