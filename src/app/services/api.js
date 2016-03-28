@@ -28,6 +28,11 @@ export default class APIService {
                     .map(res => res.json());
   }
 
+  put(endpoint, data) {
+    return this.http.put(this.getUrl(endpoint), data)
+                    .map(res => res.json());
+  }
+
   static get parameters() {
     return [[Http]];
   }
