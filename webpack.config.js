@@ -31,6 +31,7 @@ const conf = {
       { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
       { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
     ],
+    noParse: [/autoit.js/],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
