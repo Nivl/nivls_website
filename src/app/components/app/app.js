@@ -8,6 +8,7 @@ import BlogCreateArticleComponent from '../../../blog/components/create-article/
 import BlogArticleComponent from '../../../blog/components/article/article';
 import AboutComponent from '../../../about/components/about/about';
 import ProjectsComponent from '../../../projects/components/projects/projects';
+import UserLoginComponent from '../../../user/components/login/login';
 
 import 'material-design-lite';
 import 'material-design-lite/dist/material.teal-amber.min.css';
@@ -25,6 +26,7 @@ import template from 'html!./app.html';
 @RouteConfig([
   { path: '/about', name: 'About', component: AboutComponent },
   { path: '/projects', name: 'Projects', component: ProjectsComponent },
+  { path: '/user/login', name: 'UserLogin', component: UserLoginComponent },
 
   // Blog
   { path: '/blog/new', name: 'BlogCreateArticle', component: BlogCreateArticleComponent },
