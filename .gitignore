@@ -1,17 +1,8 @@
-*.pyc
-/public/media/
-/public/static/
-.directory
-private.py
-/nivls_website/nivls_website/static_files/static/commons/css/app/error.css
-/nivls_website/nivls_website/static_files/static/commons/css/app/main.css
-/nivls_website/nivls_website/static_files/static/commons/css/app/Markdown.Editor.css
-/nivls_website/nivls_website/static_files/static/commons/css/responsive/main-responsive.css
-/whoosh_index/
-/fixtures/
-*.json
-TODO
-nivlsWebsite.sublime-*
-node_modules/
-.idea/workspace.xml
-.idea/tasks.xml
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+build
+database.sqlite
+node_modules
+ncp-debug.log
+npm-debug.log
