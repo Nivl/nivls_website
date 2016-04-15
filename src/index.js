@@ -2,15 +2,14 @@ import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import { render } from 'react-dom';
 
-import Main from './components/main';
-import Projects from './components/projects';
-import Blog from './components/blog';
-import About from './components/about';
+import ProjectsContainer from './components/projects/projects-container';
+import BlogContainer from './components/blog/blog-container';
+import AboutContainer from './components/about/about-container';
 
 render((
   <Router history={hashHistory}>
-    <Route path="/" component={Main} />
-    <Route path="/projects" component={Projects} />
-    <Route path="/about" component={About} />
+    <Route path="/" component={BlogContainer} />
+    <Route path="/projects" component={ProjectsContainer} />
+    <Route path="/about" component={AboutContainer} />
   </Router>
 ), document.getElementById('app'));
