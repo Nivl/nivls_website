@@ -6,6 +6,9 @@ import ProjectsContainer from './components/projects/projects-container';
 import BlogContainer from './components/blog/blog-container';
 import AboutContainer from './components/about/about-container';
 
+import 'normalize.css';
+import './index.scss';
+
 render((
   <Router history={hashHistory}>
     <Route path="/" component={BlogContainer} />
