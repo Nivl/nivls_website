@@ -1,0 +1,100 @@
+
+.pageHeader {
+  background: #56b0e5;
+  color: #fff;
+
+  .appBar {
+    height: 64px;
+    border-bottom: 1px solid #6db8e4;
+    padding: 0 16px 0 16px;
+
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+
+    .branding {
+      margin-left: 16px;
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    .rightLinks {
+      list-style-type: none;
+
+      // Display on th right
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      height: 100%;
+      margin: 0;
+
+      li {
+        $borderSize: 3px;
+
+        height: 100%;
+        width: 90px;
+        font-weight: 300;
+        border-top: $borderSize solid white;
+        transform: translateY(-$borderSize);
+
+        transition: transform .1s linear;
+
+        &:hover {
+            transform: translateY(0px);
+        }
+
+        &.active {
+          box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+
+          transform: translateY(0px);
+          transition: transform .1s linear;
+
+          &:hover {
+            transform: translateY(-$borderSize);
+          }
+        }
+      }
+    }
+  }
+
+  .subHeader {
+    height: 250px;
+
+    .content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+
+      h1 {
+        font-size: 45px;
+        font-weight: 400;
+        margin: 0px;
+      }
+
+      h2 {
+        font-weight: 300;
+        font-size: 24px;
+      }
+    }
+  }
+
+  svg {
+    fill: #fff !important;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
