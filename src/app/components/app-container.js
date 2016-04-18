@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Router, Route, hashHistory } from 'react-router';
 
-import ProjectsContainer from './../projects/projects-container';
-import BlogContainer from './../blog/blog-container';
-import AboutContainer from './../about/about-container';
+import ProjectsContainer from './../../projects/components/projects-container';
+import BlogContainer from './../../blog/components/blog-container';
+import AboutContainer from './../../about/components/about-container';
 
-import HeaderContainer from './/header/header-container';
+import HeaderContainer from './header/header-container';
 
 
 const AppContainer = () => (

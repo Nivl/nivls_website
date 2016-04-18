@@ -7,7 +7,7 @@ import './index.scss';
 
 injectTapEventPlugin();
 
-import AppContainer from './components/app/app-container';
+import AppContainer from './app/components/app-container';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
