@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -21,8 +22,31 @@ const muiTheme = getMuiTheme({
   },
 });
 
+
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+
+import ProjectsContainer from './projects/components/projects-container';
+import BlogContainer from './blog/components/blog-container';
+import AboutContainer from './about/components/about-container';
+
+import store from './app/store';
+
 render((
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <AppContainer />
-  </MuiThemeProvider>),
+  <Provider store={store}>
+    <MuiThemeProvider muiTheme={muiTheme}>
+
+      <Router history={hashHistory}>
+
+        <Route path="/" component={AppContainer}>
+          <IndexRoute component={BlogContainer} />
+
+          <Route path="projects" component={ProjectsContainer} />
+          <Route path="about" component={AboutContainer} />
+        </Route>
+
+        {/* TODO: 404 */}
+        {/* <Route path="*" component={BlogContainer} /> */}
+      </Router>
+    </MuiThemeProvider>
+  </Provider>),
   document.getElementById('app'));

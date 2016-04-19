@@ -19,7 +19,7 @@ const conf = {
         loader: 'babel',
         query : {
           cacheDirectory: true,
-          plugins       : ['syntax-flow', 'syntax-async-functions', 'transform-regenerator', 'transform-class-properties'],
+          plugins       : ['syntax-flow', 'transform-decorators-legacy', 'syntax-async-functions', 'transform-regenerator', 'transform-class-properties'],
           presets       : ['react', 'es2015', 'stage-0'],
         },
       },

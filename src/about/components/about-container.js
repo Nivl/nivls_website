@@ -1,5 +1,17 @@
 import React from 'react';
 
-const AboutContainer = () => <div>About</div>;
+import { updateNavigation } from '../../app/actions/navigation-actions';
+import store from '../../app/store';
 
-export default AboutContainer;
+export default class AboutContainer extends React.Component {
+  componentDidMount() {
+    console.log('about mounted');
+    store.dispatch(updateNavigation({ title: 'About' }));
+  }
+
+  render() {
+    console.log('about rendered');
+
+    return (<div>About</div>);
+  }
+}

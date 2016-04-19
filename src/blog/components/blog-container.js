@@ -1,5 +1,18 @@
 import React from 'react';
 
-const BlogContainer = () => <div>Blog</div>;
+import { updateNavigation } from '../../app/actions/navigation-actions';
+import store from '../../app/store';
 
-export default BlogContainer;
+
+export default class BlogContainer extends React.Component {
+  componentDidMount() {
+    console.log('Blog mounted');
+    store.dispatch(updateNavigation({ title: 'Blog' }));
+  }
+
+  render() {
+    console.log('Blog rendered');
+
+    return (<div>Blog</div>);
+  }
+}
