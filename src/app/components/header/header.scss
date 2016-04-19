@@ -2,10 +2,11 @@
 .pageHeader {
   background: #56b0e5;
   color: #fff;
+  transition: background-color 0.1s linear;
 
   .appBar {
     height: 64px;
-    border-bottom: 1px solid #6db8e4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     padding: 0 16px 0 16px;
 
     display: flex;

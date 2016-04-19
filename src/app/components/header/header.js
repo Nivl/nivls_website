@@ -6,38 +6,44 @@ import ActionHMenu from 'material-ui/svg-icons/navigation/menu';
 
 import './header.scss';
 
-const Header = ({ navigation }) => (
-  <header className="pageHeader">
-    <div className="appBar">
-      <IconButton>
-        <ActionHMenu />
-      </IconButton>
+const Header = ({ navigation }) => {
+  const colorStyle = {
+    backgroundColor: navigation.color,
+  };
 
-      <span className="branding">Melvin Laplanche</span>
+  return (
+    <header className="pageHeader" style={colorStyle}>
+      <div className="appBar">
+        <IconButton>
+          <ActionHMenu />
+        </IconButton>
 
-      <ul className="rightLinks">
-        <li>
-          <Link to={"/"}>Blog</Link>
-        </li>
+        <span className="branding">Melvin Laplanche</span>
 
-        <li>
-          <Link to={"/about"}>About</Link>
-        </li>
+        <ul className="rightLinks">
+          <li>
+            <Link to={"/"}>Blog</Link>
+          </li>
 
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
-      </ul>
+          <li>
+            <Link to={"/about"}>About</Link>
+          </li>
 
-    </div>
-    <div className="subHeader">
-      <div className="content">
-        <h1>{navigation.title}</h1>
-        <h2>{navigation.description}</h2>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+        </ul>
+
       </div>
-    </div>
-  </header>
-);
+      <div className="subHeader">
+        <div className="content">
+          <h1>{navigation.title}</h1>
+          <h2>{navigation.description}</h2>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 Header.propTypes = {
   navigation: React.PropTypes.object.isRequired,

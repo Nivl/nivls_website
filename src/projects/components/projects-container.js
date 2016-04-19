@@ -5,7 +5,7 @@ import store from '../../app/store';
 
 export default class ProjectsContainer extends React.Component {
   componentDidMount() {
-    store.dispatch(updateNavigation({ title: 'Portfolio' }));
+    store.dispatch(updateNavigation({ title: 'Portfolio', color: '#37b369' }));
     console.log('projects mounted');
   }
 
