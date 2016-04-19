@@ -23,7 +23,8 @@ const muiTheme = getMuiTheme({
 });
 
 
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import ProjectsContainer from './projects/components/projects-container';
 import BlogContainer from './blog/components/blog-container';
@@ -31,11 +32,13 @@ import AboutContainer from './about/components/about-container';
 
 import store from './app/store';
 
+const history = syncHistoryWithStore(browserHistory, store);
+
 render((
   <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>
 
-      <Router history={hashHistory}>
+      <Router history={history}>
 
         <Route path="/" component={AppContainer}>
           <IndexRoute component={BlogContainer} />
