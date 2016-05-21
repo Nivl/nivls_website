@@ -1,6 +1,6 @@
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
+import 'core-js/es6';
+import 'core-js/es7/reflect';
+require('zone.js');
 
 import { bootstrap } from '@angular/platform-browser-dynamic';
 
