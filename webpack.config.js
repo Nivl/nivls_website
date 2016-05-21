@@ -2,42 +2,46 @@
 
 'use strict';
 
-const webpack           = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path               = require('path');
+const webpack            = require('webpack');
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const PROD = (process.env.NODE_ENV && process.env.NODE_ENV === 'production');
 
 const conf = {
   devtool: 'source-map',
-  entry  : ['babel-polyfill', `${__dirname}/src/main.js`],
+  entry  : [path.join(__dirname, 'src', 'client.ts')],
   output : {
-    path    : `${__dirname}/dist`,
+    path    : path.join(__dirname, 'dist'),
     filename: '[name].bundle.[hash].js',
+  },
+  resolve: {
+    extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html'],
   },
   module: {
     loaders: [
-      {
-        test  : /\.jsx?$/,
-        loader: 'babel',
-        query : {
-          cacheDirectory: true,
-          plugins       : ['transform-decorators-legacy', 'syntax-async-functions', 'transform-regenerator', 'transform-class-properties'],
-          presets       : ['es2015', 'stage-0'],
-        },
-      },
+      { test  : /\.ts$/, loader: 'ts-loader' },
+      { test: /\.html$/, loader: 'html-loader' },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
-      { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
+      { test: /\.jpg$/, loader: 'file-loader?mimetype=image/jpg' },
+      { test: /\.png$/, loader: 'file-loader?mimetype=image/png' },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
     ],
-    noParse: [/autoit.js/],
+    noParse: [
+      path.join(__dirname, 'zone.js', 'dist'),
+      path.join(__dirname, 'angular2', 'bundles')
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: `${__dirname}/src/index.html`,
-      favicon : `${__dirname}/src/favicon.png`,
+      template: path.join(__dirname, 'src', 'index.html'),
       minify  : (PROD) ? ({ removeComments: true, collapseWhitespace: true, minifyJS: true }) : (false),
     }),
   ],
@@ -51,8 +55,6 @@ if (PROD) {
   // loaders
   conf.module.loaders.push({ test: /\.scss$/, loaders: ['style?amp', 'css', 'sass'] });
   conf.module.loaders.push({ test: /\.css$/, loaders: ['style?amp', 'css'] });
-  // plugins
-  conf.plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
 } else {
   // loaders
   conf.module.loaders.push({
