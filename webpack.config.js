@@ -24,6 +24,8 @@ const conf = {
     loaders: [
       { test  : /\.ts$/, loader: 'ts-loader' },
       { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.scss$/, loaders: ['to-string', 'css', 'sass'] },
+      { test: /\.css$/, loaders: ['to-string', 'css'] },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.jpg$/, loader: 'file-loader?mimetype=image/jpg' },
       { test: /\.png$/, loader: 'file-loader?mimetype=image/png' },
@@ -46,23 +48,5 @@ const conf = {
     historyApiFallback: true,
   },
 };
-
-if (PROD) {
-  // loaders
-  conf.module.loaders.push({ test: /\.scss$/, loaders: ['style?amp', 'css', 'sass'] });
-  conf.module.loaders.push({ test: /\.css$/, loaders: ['style?amp', 'css'] });
-} else {
-  // loaders
-  conf.module.loaders.push({
-    test  : /\.scss$/,
-    loader: ExtractTextPlugin.extract('style?amp', 'css?sourceMap!sass'),
-  });
-  conf.module.loaders.push({
-    test  : /\.css$/,
-    loader: ExtractTextPlugin.extract('style-loader?amp', 'css-loader?sourceMap'),
-  });
-  // plugins
-  conf.plugins.push(new ExtractTextPlugin('styles.css'));
-}
 
 module.exports = conf;
