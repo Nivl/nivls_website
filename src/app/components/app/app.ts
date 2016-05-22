@@ -11,7 +11,7 @@ import UserLoginComponent from '../../../users/components/login/login';
   directives: [...ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS],
   styles: [require('normalize.css'), require('./app.scss')],
-  template: require('./app.html')
+  template: require('./app.html'),
 })
 @Routes([
   { path: '/about', component: AboutComponent },
