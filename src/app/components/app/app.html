@@ -1,9 +1,38 @@
-<nav class="mdl-navigation">
-  <a class="mdl-navigation__link" [routerLink]="['/']">Blog</a>
-  <a class="mdl-navigation__link" [routerLink]="['/projects']">Projects</a>
-  <a class="mdl-navigation__link" [routerLink]="['/about']">About</a>
-  <a class="mdl-navigation__link" [routerLink]="['/users/login']">Login</a>
-</nav>
+<md-sidenav-layout fullscreen>
+  <md-sidenav #start>
+    <header>
+      <img src="images/logo.png" width=30 />
+    </header>
 
+    <md-nav-list>
+      <a md-list-item (click)="start.close()" [routerLink]="['/']">
+        <md-icon>library_books</md-icon> Blog
+      </a>
 
-<router-outlet></router-outlet>
+      <a md-list-item (click)="start.close()" [routerLink]="['/projects']">
+        <md-icon>apps</md-icon> Projects
+      </a>
+
+      <a md-list-item (click)="start.close()" [routerLink]="['/about']">
+        <md-icon>face</md-icon> About
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <div>
+    <md-toolbar color="primary">
+      <button class="mobile-only" md-icon-button (click)="start.open()">
+        <md-icon>menu</md-icon>
+      </button>
+
+      <span>Melvin Laplanche</span>
+
+      <!-- mobile-only  -->
+      <span class="hide-on-mobile" class="spacer"></span>
+      <a md-button class="hide-on-mobile" [routerLink]="['/']">Blog</a>
+      <a md-button class="hide-on-mobile" [routerLink]="['/projects']">Projects</a>
+      <a md-button class="hide-on-mobile" [routerLink]="['/about']">About</a>
+    </md-toolbar>
+
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-layout>
