@@ -1,18 +1,31 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <base href="/">
-    <title>Melvin Laplanche</title>
-    <meta name="description" content="Full Stack Engineer based in LA.">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>WwwMelvin</title>
+  <base href="/">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  </head>
+  {{#unless environment.production}}
+  <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
+  {{/unless}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>Loading...</app-root>
 
-  <body>
-    <ml-app>Loading...</ml-app>
-  </body>
+  
+
+    {{#each scripts.polyfills}}
+    <script src="{{.}}"></script>
+    {{/each}}
+    <script>
+      System.import('system-config.js').then(function () {
+        System.import('main');
+      }).catch(console.error.bind(console));
+    </script>
+
+  
+
+</body>
 </html>

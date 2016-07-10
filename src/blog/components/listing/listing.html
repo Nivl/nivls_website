@@ -1,9 +1,0 @@
-<a [routerLink]="['BlogCreateArticle']" class="ml-add-post mdl-button mdl-js-button mdl-button--fab mdl-button--accent mdl-js-ripple-effect">
-  <i class="material-icons">add</i>
-</a>
-
-<div class="mdl-grid">
-  <div *ngFor="#article of articles" class="mdl-cell mdl-cell--4-col mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--2-offset-desktop mdl-cell--8-col-desktop">
-    <ml-blog-card [article]="article"></ml-blog-card>
-  </div>
-</div>
