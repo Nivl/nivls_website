@@ -1,6 +1,8 @@
 {
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
+    "moment": "registry:dt/moment#2.8.0+20160316155526",
+    "moment-timezone": "registry:dt/moment-timezone#0.2.5+20160329220348",
     "node": "registry:dt/node#6.0.0+20160514165920"
   }
 }
