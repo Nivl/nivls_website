@@ -7,19 +7,19 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@ngrx': 'vendor/@ngrx'
+  '@ngrx': 'vendor/@ngrx',
+  '@angular2-material': 'vendor/@angular2-material',
 };
 
 /** User packages configuration. */
 const packages: any = {
-  '@ngrx/core': {
-    main: 'index.js',
-    format: 'cjs'
-  },
-  '@ngrx/store': {
-    main: 'index.js',
-    format: 'cjs'
-  }
+  '@ngrx/core': { main: 'index.js', format: 'cjs' },
+  '@ngrx/store': { main: 'index.js', format: 'cjs' },
+
+  '@angular2-material/core': {main: 'core.js'},
+  '@angular2-material/toolbar': {main: 'toolbar.js'},
+  '@angular2-material/sidenav': {main: 'sidenav.js'},
+  '@angular2-material/icon': {main: 'icon.js'},
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
