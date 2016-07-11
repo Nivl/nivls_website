@@ -18,6 +18,7 @@ module.exports = function(defaults) {
       '@angular/**/*.+(js|js.map)',
       '@ngrx/**/*.+(js|js.map)',
       '@angular2-material/**/*',
+      'normalize.css/normalize.css',
     ]
   });
 };
