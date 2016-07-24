@@ -15,12 +15,20 @@ const map: any = {
 const packages: any = {
   '@ngrx/core': { main: 'index.js', format: 'cjs' },
   '@ngrx/store': { main: 'index.js', format: 'cjs' },
-
-  '@angular2-material/core': {main: 'core.js'},
-  '@angular2-material/toolbar': {main: 'toolbar.js'},
-  '@angular2-material/sidenav': {main: 'sidenav.js'},
-  '@angular2-material/icon': { main: 'icon.js' },
 };
+
+// put the names of any of your Material components here
+const materialPkgs: string[] = [
+  'core',
+  'button',
+  'toolbar',
+  'icon',
+  'sidenav',
+  'list',
+];
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
