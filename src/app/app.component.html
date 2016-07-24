@@ -4,7 +4,7 @@
   <md-sidenav #sidenav>
     <md-nav-list>
       <template ngFor let-route [ngForOf]="routes">
-        <a md-list-item *ngIf="route.depth==0" routerLink="{{ route.path }}">
+        <a md-list-item *ngIf="route.depth==0" routerLink="{{ route.path }}" (click)="sidenav.close()">
           <md-icon md-list-icon *ngIf="route.icon">{{ route.icon }}</md-icon>
           <span md-line>{{ route.name }}</span>
         </a>
