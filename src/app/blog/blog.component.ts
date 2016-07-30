@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { ArticleListComponent } from './article-list';
+import { ArticleService } from './article';
+
+/**
+ * Represent a full blog
+ *
+ * @export
+ * @class BlogComponent
+ */
 @Component({
   moduleId: module.id,
-  selector: 'app-blog',
+  selector: 'ml-blog',
   templateUrl: 'blog.component.html',
-  styleUrls: ['blog.component.css']
+  styleUrls: ['blog.component.css'],
+  directives: [ArticleListComponent],
+  providers: [ArticleService],
 })
-export class BlogComponent implements OnInit {
-
+export class BlogComponent {
   constructor() {}
-
-  ngOnInit() {
-  }
-
 }
