@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
   api: {
-    url: 'http://0.0.0.0:5000/'
+    url: 'http://0.0.0.0:5000'
   }
 };

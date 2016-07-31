@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Article } from './article.models';
 
 /**
@@ -10,16 +10,12 @@ import { Article } from './article.models';
  */
 @Component({
   moduleId: module.id,
-  selector: 'app-article',
+  selector: 'ml-article',
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css']
 })
-export class ArticleComponent implements OnInit {
-
+export class ArticleComponent {
   @Input() article: Article;
 
   constructor() {}
-
-  ngOnInit() {
-  }
 }
