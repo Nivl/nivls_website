@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { Article, ArticleComponent } from '../article';
 
 /**
  * Represent a list of blog articles
@@ -11,13 +12,14 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
   selector: 'ml-article-list',
   templateUrl: 'article-list.component.html',
-  styleUrls: ['article-list.component.css']
+  styleUrls: ['article-list.component.css'],
+  directives: [ArticleComponent]
 })
 export class ArticleListComponent implements OnInit {
+  @Input() articles: Article[];
 
   constructor() {}
 
   ngOnInit() {
   }
-
 }

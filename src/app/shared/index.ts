@@ -1,1 +1,1 @@
-export * from './payload.model.ts';
+export * from './payload.model';

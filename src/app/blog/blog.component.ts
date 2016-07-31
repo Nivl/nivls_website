@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { ArticleListComponent } from './article-list';
-import { ArticleService } from './';
+import { ArticleService, Article } from './article';
 
 /**
  * Represent a full blog
@@ -18,5 +19,12 @@ import { ArticleService } from './';
   providers: [ArticleService],
 })
 export class BlogComponent {
-  constructor() {}
+  public articles$: Observable<Article[]>;
+
+  constructor(
+    private articleService: ArticleService
+  ) {
+    this.articleService.refresh();
+    this.articles$ = this.articleService.get();
+  }
 }
