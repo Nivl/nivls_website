@@ -1,1 +1,1 @@
-export * from './article/article.services';
+export * from './article/article.service';

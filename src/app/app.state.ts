@@ -1,5 +1,5 @@
-import { BlogState } from './blog';
+import { Article } from './blog/article';
 
 export interface AppState {
-  blog: BlogState;
+  'blog-articles': Article[];
 };
